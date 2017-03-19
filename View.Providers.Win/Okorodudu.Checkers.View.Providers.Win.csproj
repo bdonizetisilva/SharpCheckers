@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F2B69A2-15AA-44C2-B1E5-08D058D0DB8C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Okorodudu.Checkers.View.Providers.Win</RootNamespace>
+    <AssemblyName>SharpCheckers</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>Resources\Icons\icon.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>http://localhost/SharpCheckers/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SharpCheckers.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckersForm.Designer.cs">
+      <DependentUpon>CheckersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IAudio.cs" />
+    <Compile Include="Controls\BoardPainter.cs" />
+    <Compile Include="Controls\BoardPanel2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BoardPanel2D.Designer.cs">
+      <DependentUpon>BoardPanel2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MoveAnimator.cs" />
+    <Compile Include="Controls\Win32Audio.cs" />
+    <Compile Include="ViewModel\FloatingPiece.cs" />
+    <Compile Include="ViewModel\IPieceSet.cs" />
+    <Compile Include="ViewModel\PieceSet.cs" />
+    <Compile Include="ViewModel\PieceSetFactory.cs" />
+    <Compile Include="PieceSets\DefaultPieceSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultPieceSet.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Okorodudu.Checkers.Model.csproj">
+      <Project>{03A65E7C-AA66-4F3F-A937-6BC90CE3BBCB}</Project>
+      <Name>Okorodudu.Checkers.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presenter\Okorodudu.Checkers.Presenter.csproj">
+      <Project>{CEE98C8A-5718-4D32-951F-93AD4179E6A0}</Project>
+      <Name>Okorodudu.Checkers.Presenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View.Interfaces\Okorodudu.Checkers.View.Interfaces.csproj">
+      <Project>{E1F0E5ED-C197-461D-B0C4-F047ECB0EEB0}</Project>
+      <Name>Okorodudu.Checkers.View.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CheckersForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CheckersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BoardPanel2D.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoardPanel2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieceSets\DefaultPieceSet.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DefaultPieceSet.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cursors\HandSelectCursor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cursors\HandGrabCursor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PieceSets\BlackMan.gif" />
+    <Content Include="PieceSets\BlackKing.gif" />
+    <Content Include="PieceSets\DarkSquare.gif" />
+    <Content Include="PieceSets\LightSquare.gif" />
+    <Content Include="PieceSets\WhiteMan.gif" />
+    <Content Include="PieceSets\WhiteKing.gif" />
+    <EmbeddedResource Include="Resources\Audio\PieceDrop.wav" />
+    <Content Include="Resources\Icons\icon.ico" />
+    <Content Include="Resources\Images\BlackTurnIndicator.gif" />
+    <Content Include="Resources\Images\WhiteTurnIndicator.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
